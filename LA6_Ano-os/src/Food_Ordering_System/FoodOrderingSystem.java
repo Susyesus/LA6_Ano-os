@@ -22,7 +22,7 @@ public class FoodOrderingSystem extends  JFrame{
     private final JCheckBox[] foods = {cPizza,cBurger,cFries,cSoftDrinks,cTea,cSundae};
     private final JRadioButton[] bgDiscount = {rb5,rb10,rb15,rbNone};
     private final double[] prices = {100,80,65,55,50,40};
-    private final double[] discounts = { 0.15, 0.1, 0.05,0.0};
+    private final double[] discounts = { 0.05, 0.1, 0.15,0.0};
     FoodOrderingSystem (){
         DecimalFormat df = new DecimalFormat("#.00");
 
