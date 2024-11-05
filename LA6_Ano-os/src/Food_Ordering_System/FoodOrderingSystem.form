@@ -185,13 +185,5 @@
       <member id="45af1"/>
       <member id="36974"/>
     </group>
-    <group name="bgFood">
-      <member id="1e662"/>
-      <member id="1e662"/>
-      <member id="fe968"/>
-      <member id="db216"/>
-      <member id="428bb"/>
-      <member id="46876"/>
-    </group>
   </buttonGroups>
 </form>

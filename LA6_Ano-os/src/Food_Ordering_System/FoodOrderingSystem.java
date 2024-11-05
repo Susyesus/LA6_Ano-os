@@ -19,20 +19,38 @@ public class FoodOrderingSystem extends  JFrame{
     private JRadioButton rb15;
     private JButton btnOrder;
 
-    private JCheckBox[] foods = {cBurger,cFries,cTea,cPizza,cSundae,cSoftDrinks};
-    private JRadioButton[] bgDiscount = {rb5,rb10,rb15,rbNone};
+    private final JCheckBox[] foods = {cPizza,cBurger,cFries,cSoftDrinks,cTea,cSundae};
+    private final JRadioButton[] bgDiscount = {rb5,rb10,rb15,rbNone};
+    private final double[] prices = {100,80,65,55,50,40};
+    private final double[] discounts = { 0.15, 0.1, 0.05,0.0};
     FoodOrderingSystem (){
         DecimalFormat df = new DecimalFormat("#.00");
 
         btnOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int totalFood;
+                double totalFood = 0;
+                double discount = 0;
+                int ctr = 0;
+                int discCtr = 0;
                 for(JCheckBox cb: foods){
                     if(cb.isSelected()){
-                        if(cb)
+                        totalFood += prices[ctr];
                     }
+                    ctr++;
                 }
+                for (JRadioButton rb: bgDiscount){
+
+                    if(rb.isSelected()) {
+                        discount = discounts[discCtr];
+                        break;
+                    }
+                    discCtr++;
+
+                }
+                totalFood = totalFood - (totalFood*discount);
+
+                JOptionPane.showMessageDialog(null,"Total: " + df.format(totalFood));
             }
         });
     }
@@ -44,4 +62,5 @@ public class FoodOrderingSystem extends  JFrame{
         app.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         app.setVisible(true);
     }
+
 }
